@@ -24,15 +24,15 @@ function calculateInvestment(data: InvestmentData): CalculationResult {
   const { initialAmount, annualContribution, expectedReturn, duration } = data;
 
   if (initialAmount < 0) {
-    return 'Initial investment amount must be at least zero.'
+    return "Initial investment amount must be at least zero.";
   }
 
   if (duration <= 0) {
-    return 'No valid amount of years provided.'
+    return "No valid amount of years provided.";
   }
 
   if (expectedReturn < 0) {
-    return 'Expected return must be at least zero.'
+    return "Expected return must be at least zero.";
   }
 
   let total = initialAmount;
@@ -51,7 +51,7 @@ function calculateInvestment(data: InvestmentData): CalculationResult {
       year: `Year ${i + 1}`,
       totalAmount: total,
       totalInterestEarned,
-      totalContributions
+      totalContributions,
     });
   }
 
@@ -59,7 +59,7 @@ function calculateInvestment(data: InvestmentData): CalculationResult {
 }
 
 function printResults(results: CalculationResult) {
-  if (typeof results === 'string') {
+  if (typeof results === "string") {
     console.log(results);
     return;
   }
@@ -67,9 +67,13 @@ function printResults(results: CalculationResult) {
   for (const yearEndResult of results) {
     console.log(yearEndResult.year);
     console.log(`Total: ${yearEndResult.totalAmount.toFixed(0)}`);
-    console.log(`Total Contributions: ${yearEndResult.totalContributions.toFixed(0)}`);
-    console.log(`Total Interest Earned: ${yearEndResult.totalInterestEarned.toFixed(0)}`);
-    console.log('----------------------');
+    console.log(
+      `Total Contributions: ${yearEndResult.totalContributions.toFixed(0)}`
+    );
+    console.log(
+      `Total Interest Earned: ${yearEndResult.totalInterestEarned.toFixed(0)}`
+    );
+    console.log("----------------------");
   }
 }
 
@@ -77,9 +81,9 @@ const investmentData: InvestmentData = {
   initialAmount: 5000,
   annualContribution: 500,
   expectedReturn: 0.08,
-  duration: 10
+  duration: 10,
 };
 
-const results = calculateInvestment(investmentData)
+const results = calculateInvestment(investmentData);
 
 printResults(results);
