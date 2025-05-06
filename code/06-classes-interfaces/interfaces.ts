@@ -7,7 +7,7 @@ interface Authenticatable {
 }
 
 interface AuthenticatableAdmin extends Authenticatable {
-  role: 'admin' | 'superadmin';
+  role: "admin" | "superadmin";
 }
 
 class AuthenticatableUser implements Authenticatable {
@@ -39,8 +39,8 @@ function authenticate(user: Authenticatable) {
 let user: Authenticatable;
 
 user = {
-  email: 'test@example.com',
-  password: 'abc1',
+  email: "test@example.com",
+  password: "abc1",
   login() {
     // reach out to a database, check credentials, create a session
   },
