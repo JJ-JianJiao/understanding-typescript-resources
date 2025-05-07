@@ -2,14 +2,14 @@ function logger<T extends new (...args: any[]) => any>(
   target: T,
   ctx: ClassDecoratorContext
 ) {
-  console.log('logger decorator');
+  console.log("logger decorator");
   console.log(target);
   console.log(ctx);
 
   return class extends target {
     constructor(...args: any[]) {
       super(...args);
-      console.log('class constructor');
+      console.log("class constructor");
       console.log(this);
     }
   };
@@ -24,7 +24,7 @@ function autobind(
   });
 
   return function (this: any) {
-    console.log('Executing original function');
+    console.log("Executing original function");
     target.apply(this);
   };
 }
@@ -46,12 +46,12 @@ function replacer<T>(initValue: T) {
 
 @logger
 class Person {
-  @replacer('')
-  name = 'Max';
+  @replacer("Jian")
+  name = "Max";
 
   @autobind
   greet() {
-    console.log('Hi, I am ' + this.name);
+    console.log("Hi, I am " + this.name);
   }
 }
 
