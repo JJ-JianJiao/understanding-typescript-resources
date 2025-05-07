@@ -87,17 +87,17 @@ numberList.add(10);
 numberList.add(5);
 numberList.add(-3);
 
-console.log('Length: ' + numberList.getNumberOfElements());
+console.log("Length: " + numberList.getNumberOfElements());
 numberList.print();
 
-console.log('--- NOW REMOVING INDEX 1 ---');
+console.log("--- NOW REMOVING INDEX 1 ---");
 numberList.removeAt(1);
-console.log('Length: ' + numberList.getNumberOfElements());
+console.log("Length: " + numberList.getNumberOfElements());
 numberList.print();
 
-console.log('--- NOW INSERTING AT INDEX 1 ---');
+console.log("--- NOW INSERTING AT INDEX 1 ---");
 numberList.insertAt(100, 1);
-console.log('Length: ' + numberList.getNumberOfElements());
+console.log("Length: " + numberList.getNumberOfElements());
 numberList.print();
 
 const nameList = new LinkedList<string>();
