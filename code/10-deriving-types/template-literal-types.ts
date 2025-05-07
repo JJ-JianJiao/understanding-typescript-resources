@@ -2,8 +2,8 @@
 
 // const greeting = `Hi there, ${mainUserName}.`;
 
-type ReadPermissions = 'no-read' | 'read';
-type WritePermissions = 'no-write' | 'write';
+type ReadPermissions = "no-read" | "read";
+type WritePermissions = "no-write" | "write";
 
 type FilePermissions = `${ReadPermissions}-${WritePermissions}`;
 
