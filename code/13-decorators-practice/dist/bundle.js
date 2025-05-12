@@ -272,4 +272,4 @@ var App;
     new ProjectList("active");
     new ProjectList("finished");
 })(App || (App = {}));
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=bundle.js.map
