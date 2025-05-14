@@ -1,20 +1,15 @@
-import express, { type Request, type Response } from "express";
-
-import { addTodo, getTodo, getTodos, removeTodo, updateTodo } from "../data.ts";
+import express, { Request, Response } from "express";
+import { addTodo, getTodos, getTodo, updateTodo, removeTodo } from "../data.js";
 
 const router = express.Router();
 
-// function handlePostTodos(req: Request, res: Response) {
-
-// }
+// function handlePostTodos(req: Request, res: Response) {}
 
 router.post("/todos", (req, res) => {
   const text = req.body.text;
-  console.log(req.body);
-
   const addedTodo = addTodo(text);
 
-  res.json({ message: "Todo added!", todo: addedTodo });
+  res.json({ message: "Todo added", todo: addedTodo });
 });
 
 router.get("/todos", (req, res) => {
@@ -29,7 +24,7 @@ router.get("/todos/:id", (req, res) => {
 
 router.patch("/todos/:id", (req, res) => {
   const updatedTodo = updateTodo(+req.params.id, req.body.text);
-  res.json({ message: "Todo updated", todo: updatedTodo });
+  res.json({ message: "Todo updated", todo: updateTodo });
 });
 
 router.delete("/todos/:id", (req, res) => {
